@@ -1,9 +1,14 @@
 <template>
-    <div class="a"><span class="b">1111</span></div>
+    <div class="a" @click="b"><span class="b">1111</span></div>
 </template>
 
 <script>
   // import axios from '@/http'
+  import VConsole from 'vconsole'
+
+  // if (process.env.NODE_ENV === 'production') {
+    new VConsole()
+  // }
   export default {
     name: "index",
     mounted(){
@@ -11,12 +16,15 @@
       this.search()
     },
     methods:{
+      b(){
+        console.log(new Date().getTime())
+      },
       async search() {
         let data = {
             a: 1
         };
         try {
-          const res = await this.http.get("/sugrec", data);
+          const res = await this.http.get("/shakespeare/notes/48360024/comments?page=1&count=10&author_only=false&order_by=desc");
           if (res.state === "fail") {
             console.log("请求失败")
           } else if (res.state === "ok") {

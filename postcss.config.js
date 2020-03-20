@@ -1,19 +1,20 @@
 module.exports = {
   plugins: {
     "autoprefixer": {},
-    "postcss-plugin-pxtoviewport": {
-      viewportWidth: 750,
-      viewportHeight: 1334,
-      unitPrecision: 3,
-      viewportUnit: "vw",
+    "postcss-px-to-viewport": {
+      unitToConvert: 'px',
+      viewportWidth: 375,
+      unitPrecision: 5,
+      propList: ['*'],
+      viewportUnit: 'vw',
+      fontViewportUnit: 'vw',
       selectorBlackList: [],
-      propList: [],
-      minPixelValue: 0,
+      minPixelValue: 1,
       mediaQuery: false,
-      rootValue: 16,
-      toRem: false,
-      toViewport: true,
-      isSavePx: false
+      replace: true,
+      exclude: [],
+      landscape: false,
+      landscapeUnit: 'vw',
     }
   }
 };
