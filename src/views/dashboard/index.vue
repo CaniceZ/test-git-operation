@@ -26,7 +26,7 @@
         try {
           const res = await this.http.get("/shakespeare/notes/48360024/comments?page=1&count=10&author_only=false&order_by=desc");
           if (res.state === "fail") {
-            console.log("请求失败")
+            console.log("请求失败1")
           } else if (res.state === "ok") {
             console.log("请求成功")
           }
