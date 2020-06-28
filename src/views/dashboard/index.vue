@@ -1,23 +1,33 @@
 <template>
-    <div class="a" @click="b"><span class="b">1111</span></div>
+    <div>
+        <div class="a" @click="b"><span class="b">1111</span></div>
+        <test></test>
+    </div>
 </template>
 
 <script>
   // import axios from '@/http'
   import VConsole from 'vconsole'
-
+    import test from "./test.vue"
   // if (process.env.NODE_ENV === 'production') {
-    new VConsole()
+  //   new VConsole()
   // }
   export default {
     name: "index",
+    components:{
+      test
+    },
     mounted(){
-      console.log(this.$http)
-      this.search()
+      // this.search()
+    },
+    data(){
+      return{
+        num: 0
+      }
     },
     methods:{
       b(){
-        console.log(new Date().getTime())
+        this.$eventBus.$emit('add2',{num:this.num+=1})
       },
       async search() {
         let data = {

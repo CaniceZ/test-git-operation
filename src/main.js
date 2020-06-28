@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from "./router";
 import store from './store'
+import eventBus from './bus'
 Vue.config.productionTip = false
-import http from './http'
+Vue.prototype.$eventBus = eventBus
 
-Vue.prototype.http = http
 new Vue({
   router,
   store,

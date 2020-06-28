@@ -11,6 +11,13 @@ const router = new Router({
         title: '充值中心'
       }
     },
+    {
+      path: '/test',
+      component: () => import('../views/dashboard/test'),
+      meta: {
+        title: 'test page'
+      }
+    },
   ]
 })
 export default router
