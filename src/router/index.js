@@ -12,6 +12,13 @@ const router = new Router({
       }
     },
     {
+      path: '/charge',
+      component: () => import('../views/charge'),
+      meta: {
+        title: 'addada'
+      }
+    },
+    {
       path: '/test',
       component: () => import('../views/dashboard/test'),
       meta: {
